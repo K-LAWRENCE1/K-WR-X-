@@ -1,0 +1,109 @@
+  {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(55, 130, 255, 0.22), transparent 30%),
+    radial-gradient(circle at top right, rgba(25, 95, 255, 0.18), transparent 25%),
+    linear-gradient(180deg, #030814 0%, #07101f 35%, #0a1830 70%, #050b16 100%);
+  color: #f4f8ff;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(4, 10, 22, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(91, 163, 255, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #a7d4ff;
+  text-shadow: 0 0 18px rgba(70, 150, 255, 0.35);
+}
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: #f4f8ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.nav a:hover {
+  color: #8ec5ff;
+}
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s ease;
+  font-size: 0.94rem;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #1970ff, #4eb2ff);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(39, 121, 255, 0.3);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(39, 121, 255, 0.35);
+}
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(130, 190, 255, 0.45);
+}
+.btn-outline:hover {
+  background: rgba(79, 164, 255, 0.1);
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 36px 18px 24px;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin: 10px 0;
+  line-height: 1.08;
+  color: #ffffff;
+}
+.tag,
+.mini-tag {
+  color: #8ec5ff;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 0.
