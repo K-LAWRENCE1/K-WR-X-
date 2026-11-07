@@ -3,199 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KAWREX | Luxury Gaming Store</title>
+  <title>KAWREX | Gaming Phones, Tablets and Accessories in Nigeria</title>
+  <meta name="description" content="KAWREX sells gaming tablets, phones, accessories and gadgets in Nigeria. iPad Pro M4, Lenovo Legion Y700, ASUS ROG Phone 8 Pro. Swap your old device, pay by transfer, delivery nationwide." />
+  <meta name="theme-color" content="#030814" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KAWREX | Luxury Gaming Store" />
+  <meta property="og:description" content="Gaming tablets, phones and accessories. Swap your old device or pay by transfer. Delivery nationwide." />
+  <meta property="og:image" content="ipad-pro-m4.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="logo">KΛWRΞX</div>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#cart">Cart</a>
-      <a href="#support">AI Support</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="auth-buttons">
-      <a href="#cart" class="btn btn-outline">Cart</a>
-      <a href="#support" class="btn btn-primary">AI Help</a>
-    </div>
-  </header>
+<body data-page="index.html">
+  <div id="site-header"></div>
+
   <main>
-    <section id="home" class="hero">
-      <div class="hero-text">
-        <p class="tag">Luxury gaming gadgets and accessories</p>
+    <section class="hero">
+      <div class="hero-text reveal">
+        <p class="mini-tag">Luxury gaming gadgets and accessories</p>
         <h1>Level Up Your Setup With KAWREX</h1>
         <p class="hero-subtext">
-          Shop premium gaming phones, tablets, headsets, and accessories in one clean and powerful store.
+          Gaming phones, tablets, iPhones and accessories. Pay by transfer, or swap the device you already have.
         </p>
         <div class="hero-actions">
-          <a href="#products" class="btn btn-primary">Shop Now</a>
-          <a href="#categories" class="btn btn-outline">Browse Categories</a>
+          <a href="gaming.html" class="btn btn-primary">Shop Gaming</a>
+          <a href="swap.html" class="btn btn-outline">Swap Your Device</a>
         </div>
       </div>
-      <div class="hero-card">
-        <h3>Featured Product</h3>
+      <div class="hero-card reveal" data-tilt>
+        <h3>Featured</h3>
         <p>iPad Pro (M4)</p>
-        <p>From ₦1,250,000</p>
-        <span>Premium performance for serious gamers.</span>
+        <p class="big-price">₦1,250,000</p>
+        <span class="spec">13 inches · 256GB · the strongest tablet we carry</span>
       </div>
     </section>
-    <section id="categories" class="section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Shop By Category</p>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Shop by category</p>
         <h2>Choose Your Gear</h2>
       </div>
-      <div class="grid product-grid">
-        <article class="product-card">
-          <h3>Gaming Tablets</h3>
-          <p>iPad Pro, iPad Air, Lenovo Legion and more.</p>
-        </article>
-        <article class="product-card">
-          <h3>Gaming Phones</h3>
-          <p>Strong mobile gaming devices like ASUS ROG Phone.</p>
-        </article>
-        <article class="product-card">
-          <h3>Accessories</h3>
-          <p>Thumb sleeves, gaming support tools, and more.</p>
-        </article>
-        <article class="product-card">
-          <h3>Audio Gear</h3>
-          <p>Gaming headsets and more for better sound experience.</p>
-        </article>
+      <div class="grid">
+        <a class="product-card reveal" href="gaming.html" data-tilt>
+          <div class="card-media"><img src="ipad-pro-m4.jpg" alt="Gaming tablets" loading="lazy" /></div>
+          <div class="card-body">
+            <h3>Gaming Tablets and Phones</h3>
+            <p class="spec">iPad Pro, iPad Air, Lenovo Legion, ASUS ROG.</p>
+            <span class="price">Browse →</span>
+          </div>
+        </a>
+        <a class="product-card reveal" href="iphone.html" data-tilt>
+          <div class="card-media card-media-plate"><span class="card-plate"><span>iPhone</span><em>13 to 18 Pro Max</em></span></div>
+          <div class="card-body">
+            <h3>iPhone</h3>
+            <p class="spec">Brand new and clean used. Battery health shown.</p>
+            <span class="price">Browse &rarr;</span>
+          </div>
+        </a>
+        <a class="product-card reveal" href="gadgets.html" data-tilt>
+          <div class="card-media"><img src="gaming-headset.jpg" alt="Gadgets" loading="lazy" /></div>
+          <div class="card-body">
+            <h3>Gadgets and Accessories</h3>
+            <p class="spec">Headsets, thumb sleeves and the small things.</p>
+            <span class="price">Browse →</span>
+          </div>
+        </a>
+        <a class="product-card reveal" href="swap.html" data-tilt>
+          <div class="card-media"><img src="lenovo-legion-y700.jpg" alt="Swap your device" loading="lazy" /></div>
+          <div class="card-body">
+            <h3>Swap Your Device</h3>
+            <p class="spec">Bring what you have, top up the difference.</p>
+            <span class="price">Start swap →</span>
+          </div>
+        </a>
       </div>
     </section>
-    <section id="products" class="section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Top Picks</p>
-        <h2>Popular Products</h2>
+
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Top picks</p>
+        <h2>iPhone Picks Right Now</h2>
       </div>
-      <div class="grid product-grid">
-        <article class="product-card">
-          <img src="IMG_9539.jpeg" alt="iPad Pro M4" class="product-image" />
-          <h3>iPad Pro (M4)</h3>
-          <p class="price">₦1,250,000</p>
-          <p>13 inches · 256GB</p>
-          <button class="btn btn-primary add-to-cart" data-name="iPad Pro (M4)" data-price="1250000">Add to Cart</button>
-        </article>
-        <article class="product-card">
-          <img src="IMG_9540.jpeg" alt="iPad Air M2" class="product-image" />
-          <h3>iPad Air (M2)</h3>
-          <p class="price">₦880,000</p>
-          <p>64GB / 256GB</p>
-          <button class="btn btn-primary add-to-cart" data-name="iPad Air (M2)" data-price="880000">Add to Cart</button>
-        </article>
-        <article class="product-card">
-          <img src="IMG_9620.jpeg" alt="Lenovo Legion Y700" class="product-image" />
-          <h3>Lenovo Legion Y700</h3>
-          <p class="price">₦580,000</p>
-          <p>144Hz display</p>
-          <button class="btn btn-primary add-to-cart" data-name="Lenovo Legion Y700" data-price="580000">Add to Cart</button>
-        </article>
-        <article class="product-card">
-          <img src="IMG_9621.jpeg" alt="ASUS ROG Phone 8 Pro" class="product-image" />
-          <h3>ASUS ROG Phone 8 Pro</h3>
-          <p class="price">₦440,000</p>
-          <p>165Hz AMOLED</p>
-          <button class="btn btn-primary add-to-cart" data-name="ASUS ROG Phone 8 Pro" data-price="440000">Add to Cart</button>
-        </article>
-        <article class="product-card">
-          <img src="IMG_9544.jpeg" alt="Gaming Headset" class="product-image" />
-          <h3>Gaming Headset</h3>
-          <p class="price">₦55,000</p>
-          <p>USB wired headset</p>
-          <button class="btn btn-primary add-to-cart" data-name="Gaming Headset" data-price="55000">Add to Cart</button>
-        </article>
-        <article class="product-card">
-          <img src="IMG_9622.jpeg" alt="Thumb Sleeves" class="product-image" />
-          <h3>Thumb Sleeves</h3>
-          <p class="price">₦3,000</p>
-          <p>Sweat-resistant touch sleeves</p>
-          <button class="btn btn-primary add-to-cart" data-name="Thumb Sleeves" data-price="3000">Add to Cart</button>
-        </article>
-      </div>
+      <div class="grid" id="categoryGrid" data-category="iphone" data-limit="6"></div>
     </section>
-    <section id="why-us" class="section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Why Buy From Us</p>
+
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Why buy from us</p>
         <h2>Why Gamers Choose KAWREX</h2>
       </div>
-      <div class="grid product-grid">
-        <article class="product-card">
-          <h3>Trusted Gadgets</h3>
-          <p>Quality gaming devices and accessories you can trust.</p>
-        </article>
-        <article class="product-card">
-          <h3>Easy Ordering</h3>
-          <p>Simple cart flow and direct payment process.</p>
-        </article>
-        <article class="product-card">
-          <h3>Fast Support</h3>
-          <p>Quick help through AI support and WhatsApp chat.</p>
-        </article>
-        <article class="product-card">
-          <h3>More Devices Available</h3>
-          <p>Need something else? Message us directly for more gadgets.</p>
-        </article>
-      </div>
-    </section>
-    <section id="cart" class="section cart-section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Shopping Cart</p>
-        <h2>Your Cart & Payment Area</h2>
-      </div>
-      <div class="cart-box">
-        <div id="cartItems">
-          <p>Your cart is empty.</p>
+      <div class="grid">
+        <div class="product-card reveal" data-tilt>
+          <div class="card-body">
+            <h3>Trusted gadgets</h3>
+            <p class="spec">Devices we would use ourselves, checked before we list them.</p>
+          </div>
         </div>
-        <p class="price total-text"><strong>Total:</strong> ₦<span id="cartTotal">0</span></p>
-        <div class="checkout-box">
-          <h3>Proceed to Payment</h3>
-          <p><strong>Bank:</strong> Opay Bank</p>
-          <p><strong>Account Name:</strong> Lawrence Aghachukwu Ebube</p>
-          <p><strong>Account Number:</strong> 8069564602</p>
-          <p>After payment, send proof of payment on WhatsApp.</p>
-          <p><strong>WhatsApp:</strong> +234-8069564602</p>
-          <button class="btn btn-primary" id="proceedBtn">Proceed to Payment</button>
-          <p class="form-message" id="proceedMessage"></p>
+        <div class="product-card reveal" data-tilt>
+          <div class="card-body">
+            <h3>Swap and save</h3>
+            <p class="spec">Your old device counts as part payment. Nothing wasted.</p>
+          </div>
+        </div>
+        <div class="product-card reveal" data-tilt>
+          <div class="card-body">
+            <h3>Fast support</h3>
+            <p class="spec">Message us and a person answers, not a robot.</p>
+          </div>
+        </div>
+        <div class="product-card reveal" data-tilt>
+          <div class="card-body">
+            <h3>More than the list</h3>
+            <p class="spec">If it is not here, ask. We source most gaming gear.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section id="support" class="section ai-section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Smart Assistant</p>
-        <h2>AI Customer Support</h2>
-      </div>
-      <div class="support-box">
-        <p>Ask about products, prices, delivery, payment, or recommendations. For other gadgets, accessories, and any gaming devices not listed here, please message us on WhatsApp: +234-8069564602.</p>
-        <div class="chat-window" id="chatWindow">
-          <div class="chat-bubble ai">Hi, welcome to KAWREX. Ask me about products, prices, delivery, payment, or recommendations.</div>
-        </div>
-        <div class="chat-input-row">
-          <input type="text" id="chatInput" placeholder="Ask AI support something..." />
-          <button class="btn btn-primary" id="chatBtn">Send</button>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="section">
-      <div class="section-title-wrap">
-        <p class="mini-tag">Reach Us</p>
-        <h2>Customer Service</h2>
-      </div>
-      <div class="contact-card">
-        <p><strong>Phone:</strong> 08069564602</p>
-        <p><strong>WhatsApp:</strong> +234-8069564602</p>
-        <p><strong>Email:</strong> lawrenceaghachukwu@gmail.com</p>
+
+    <section class="section">
+      <div class="product-card reveal" style="padding:24px;text-align:center">
+        <h2 style="margin:0 0 8px">Got an old device lying around?</h2>
+        <p class="spec">Trade it in and pay only the difference for something new.</p>
+        <a class="btn btn-primary" href="swap.html">Start a Swap</a>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <p>© 2026 KAWREX. All rights reserved.</p>
+    <p>Prices can change without notice. Payment by bank transfer.</p>
   </footer>
-  <a href="https://wa.me/2348069564602" class="floating-whatsapp" target="_blank">
-    WhatsApp
-  </a>
-  <script src="script.js"></script>
+
+  <a href="https://wa.me/2348069564602" class="floating-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // the moving strip under the hero, built from the real product list
+    document.addEventListener("DOMContentLoaded", function () {
+      const track = document.getElementById("marqueeTrack");
+      if (!track) return;
+      const items = PRODUCTS.concat(PRODUCTS).map(function (p) {
+        return "<span>" + p.name + " <b>" + money(p.price) + "</b></span>";
+      }).join("");
+      track.innerHTML = items;
+    });
+  </script>
 </body>
 </html>

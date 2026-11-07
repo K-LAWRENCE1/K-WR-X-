@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | KAWREX</title>
+  <meta name="theme-color" content="#030814" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="checkout.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Checkout</p>
+        <h1 style="margin:8px 0 0;font-size:1.9rem">Pay and Confirm</h1>
+      </div>
+
+      <div class="check-grid">
+        <form class="panel reveal" id="checkForm">
+          <h2>1. Your details</h2>
+
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" id="buyerName" autocomplete="name" placeholder="Your full name" required />
+          </label>
+
+          <label class="field">
+            <span>Phone number</span>
+            <input type="tel" id="buyerPhone" autocomplete="tel" inputmode="tel" placeholder="0801 234 5678" required />
+          </label>
+
+          <label class="field">
+            <span>Delivery address</span>
+            <input type="text" id="buyerAddress" autocomplete="street-address" placeholder="Street, area, city" required />
+          </label>
+
+          <label class="field">
+            <span>Delivery</span>
+            <select id="zone">
+              <option value="pickup">Pick up at the shop - free</option>
+              <option value="lagos" selected>Lagos - ₦3,000</option>
+              <option value="outside">Outside Lagos - ₦6,000</option>
+            </select>
+          </label>
+
+          <h3>2. Pay to this account</h3>
+          <div class="bank-box">
+            <p><strong>Bank:</strong> Opay Bank</p>
+            <p><strong>Name:</strong> Lawrence Aghachukwu Ebube</p>
+            <p><strong>Number:</strong> 8069564602</p>
+            <p><strong>Amount:</strong> <span id="payAmount">₦0</span></p>
+          </div>
+
+          <h3>3. Confirm</h3>
+          <button type="submit" class="btn btn-primary" style="width:100%">I have paid, send my order</button>
+          <p class="form-message" id="checkMessage"></p>
+        </form>
+
+        <aside class="panel reveal">
+          <h2>Order summary</h2>
+          <div id="summaryLines"></div>
+          <div class="totals-row" style="border-top:1px solid var(--line);margin-top:10px;padding-top:10px">
+            <span>Items</span>
+            <span id="summarySubtotal">₦0</span>
+          </div>
+          <div class="totals-row">
+            <span>Delivery</span>
+            <span id="summaryFee">₦0</span>
+          </div>
+          <div class="totals-row total">
+            <span>Total</span>
+            <span id="summaryTotal">₦0</span>
+          </div>
+          <p class="spec" style="margin-top:14px">
+            The order and your address go straight to our WhatsApp. Send your payment proof in the same chat.
+          </p>
+          <a class="btn btn-outline" href="cart.html" style="width:100%;text-align:center">Back to cart</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 KAWREX. All rights reserved.</p>
+    <p>Prices can change without notice. Payment by bank transfer.</p>
+  </footer>
+
+  <a href="https://wa.me/2348069564602" class="floating-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

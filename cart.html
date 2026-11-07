@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | KAWREX</title>
+  <meta name="theme-color" content="#030814" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="cart.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Cart</p>
+        <h1 style="margin:8px 0 0;font-size:1.9rem">Your Cart</h1>
+      </div>
+
+      <div class="cart-wrap">
+        <div>
+          <div id="cartLines"></div>
+        </div>
+
+        <aside class="totals-card reveal">
+          <div class="totals-row">
+            <span>Items</span>
+            <span id="subtotal">₦0</span>
+          </div>
+          <div class="totals-row">
+            <span>Delivery</span>
+            <span class="muted">Added at checkout</span>
+          </div>
+          <div class="totals-row total">
+            <span>Total</span>
+            <span id="grandTotal">₦0</span>
+          </div>
+          <a class="btn btn-primary" id="toCheckout" href="checkout.html" style="width:100%;text-align:center;margin-top:14px">Proceed to Payment</a>
+          <a class="btn btn-outline" href="gaming.html" style="width:100%;text-align:center;margin-top:10px">Keep Shopping</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 KAWREX. All rights reserved.</p>
+    <p>Prices can change without notice. Payment by bank transfer.</p>
+  </footer>
+
+  <a href="https://wa.me/2348069564602" class="floating-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swap Your Device | KAWREX</title>
+  <meta name="description" content="Swap your old phone, tablet or console at KAWREX. Send photos and condition, we quote you and you top up the difference." />
+  <meta name="theme-color" content="#030814" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="swap.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="section">
+      <div class="section-title-wrap reveal">
+        <p class="mini-tag">Swap</p>
+        <h1 style="margin:8px 0 6px;font-size:2rem">Trade What You Have</h1>
+        <p class="spec">Your old device counts as part payment. We look at it, quote you, and you pay only the difference.</p>
+      </div>
+
+      <div class="swap-wrap">
+        <form class="panel reveal" id="swapForm">
+          <h2>Tell us about your device</h2>
+
+          <label class="field">
+            <span>What device do you have?</span>
+            <input type="text" id="swapDevice" placeholder="e.g. iPhone 11, PS4, Lenovo tablet" required />
+          </label>
+
+          <label class="field">
+            <span>Storage</span>
+            <input type="text" id="swapStorage" placeholder="e.g. 128GB, or leave empty if unsure" />
+          </label>
+
+          <label class="field">
+            <span>Condition</span>
+            <select id="swapCondition">
+              <option value="Like new">Like new</option>
+              <option value="Good, small scratches" selected>Good, small scratches</option>
+              <option value="Used, visible scratches">Used, visible scratches</option>
+              <option value="Cracked screen or faulty">Cracked screen or faulty</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>What do you want to swap it for?</span>
+            <input type="text" id="swapWants" placeholder="e.g. iPad Air, or advice" />
+          </label>
+
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" id="swapName" autocomplete="name" placeholder="Your name" required />
+          </label>
+
+          <label class="field">
+            <span>Phone number</span>
+            <input type="tel" id="swapPhone" autocomplete="tel" inputmode="tel" placeholder="0801 234 5678" required />
+          </label>
+
+          <button type="submit" class="btn btn-primary" style="width:100%">Send for a quote</button>
+          <p class="form-message" id="swapMessage"></p>
+          <p class="spec">You will be asked to send photos of the device in the same WhatsApp chat.</p>
+        </form>
+
+        <aside class="panel reveal">
+          <h2>How swapping works</h2>
+          <div class="swap-steps">
+            <div class="swap-step">
+              <b>1</b>
+              <p>Send the device name, storage and condition. Photos help us quote faster.</p>
+            </div>
+            <div class="swap-step">
+              <b>2</b>
+              <p>We give you a price for your device, and the price of what you want.</p>
+            </div>
+            <div class="swap-step">
+              <b>3</b>
+              <p>You pay the difference and we hand over the new device.</p>
+            </div>
+            <div class="swap-step">
+              <b>4</b>
+              <p>If the device is faulty, we still look at it. Some are worth something, some are not.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 KAWREX. All rights reserved.</p>
+    <p>Prices can change without notice. Payment by bank transfer.</p>
+  </footer>
+
+  <a href="https://wa.me/2348069564602" class="floating-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
