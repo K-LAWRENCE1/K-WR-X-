@@ -74,6 +74,7 @@ function addToCart(id, qty) {
     cart.push({ id: id, qty: qty || 1 });
   }
   writeCart(cart);
+  coin();
   popSound();
   bumpCartIcon();
 }
@@ -105,20 +106,54 @@ function popSound() {
   if (!soundOn()) return;
   try {
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
     const now = audioCtx.currentTime;
 
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
-    osc.type = "triangle";
-    osc.frequency.setValueAtTime(520, now);
-    osc.frequency.exponentialRampToValueAtTime(180, now + 0.14);
-    gain.gain.setValueAtTime(0.16, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(680, now);
+    osc.frequency.exponentialRampToValueAtTime(240, now + 0.16);
+    gain.gain.setValueAtTime(0.5, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
     osc.connect(gain).connect(audioCtx.destination);
     osc.start(now);
-    osc.stop(now + 0.2);
+    osc.stop(now + 0.28);
+
+    const sub = audioCtx.createOscillator();
+    const subGain = audioCtx.createGain();
+    sub.type = "triangle";
+    sub.frequency.setValueAtTime(180, now);
+    subGain.gain.setValueAtTime(0.28, now);
+    subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+    sub.connect(subGain).connect(audioCtx.destination);
+    sub.start(now);
+    sub.stop(now + 0.22);
   } catch (e) {
     // if the browser blocks audio, the site still works
+  }
+}
+
+// short tick for taps, page moves and card presses
+function tapSound(pitch) {
+  if (!soundOn()) return;
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    const now = audioCtx.currentTime;
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = "square";
+    osc.frequency.setValueAtTime(pitch || 880, now);
+    osc.frequency.exponentialRampToValueAtTime((pitch || 880) * 0.5, now + 0.07);
+    gain.gain.setValueAtTime(0.22, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.1);
+  } catch (e) {
+    // silent fail
   }
 }
 
@@ -127,6 +162,89 @@ function toggleSound(button) {
   localStorage.setItem("kawrexSound", next);
   button.textContent = next === "on" ? "Sound on" : "Sound off";
   if (next === "on") popSound();
+}
+
+
+// ---------- sound kit ----------
+function audioReady() {
+  if (!soundOn()) return null;
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    return audioCtx;
+  } catch (e) {
+    return null;
+  }
+}
+
+function blip(freq, endFreq, dur, type, vol) {
+  const ctx = audioReady();
+  if (!ctx) return;
+  const now = ctx.currentTime;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type || "sine";
+  osc.frequency.setValueAtTime(freq, now);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(40, endFreq || freq), now + dur);
+  gain.gain.setValueAtTime(vol, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+  osc.connect(gain).connect(ctx.destination);
+  osc.start(now);
+  osc.stop(now + dur + 0.02);
+}
+
+// airy sweep, used when moving between pages
+function whoosh() {
+  const ctx = audioReady();
+  if (!ctx) return;
+  const now = ctx.currentTime;
+  const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.35, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < data.length; i++) {
+    data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+  }
+  const src = ctx.createBufferSource();
+  src.buffer = buffer;
+  const filter = ctx.createBiquadFilter();
+  filter.type = "bandpass";
+  filter.frequency.setValueAtTime(400, now);
+  filter.frequency.exponentialRampToValueAtTime(2400, now + 0.22);
+  filter.Q.value = 1.2;
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(0.22, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.34);
+  src.connect(filter).connect(gain).connect(ctx.destination);
+  src.start(now);
+}
+
+// soft sparkle when a block comes into view
+function chime() {
+  blip(1180, 1560, 0.18, "sine", 0.10);
+  setTimeout(function () {
+    blip(1560, 1860, 0.16, "sine", 0.07);
+  }, 70);
+}
+
+// cash sound for adding to the cart
+function coin() {
+  blip(1046, 1046, 0.08, "square", 0.16);
+  setTimeout(function () {
+    blip(1568, 1568, 0.12, "square", 0.14);
+  }, 70);
+}
+
+// rising notes when an order or swap goes through
+function success() {
+  [523, 659, 784, 1046].forEach(function (freq, i) {
+    setTimeout(function () {
+      blip(freq, freq, 0.2, "sine", 0.16);
+    }, i * 90);
+  });
+}
+
+// low soft click for small controls
+function clickSound() {
+  blip(300, 180, 0.06, "triangle", 0.10);
 }
 
 // ---------- header ----------
@@ -150,13 +268,30 @@ function buildHeader(active) {
 
   holder.innerHTML =
     '<header class="site-header">' +
-    '<a class="logo" href="index.html">KΛWRΞX</a>' +
+    '<a class="logo" href="index.html"><img src="logo-mark.png" alt="KAWREX" />KΛWRΞX</a>' +
     '<nav class="nav">' + navHtml + "</nav>" +
     '<div class="auth-buttons">' +
     '<a href="cart.html" class="cart-pill" data-cart-icon aria-label="Cart">Cart <span class="cart-count" data-cart-count>0</span></a>' +
     '<button type="button" class="sound-btn" id="soundBtn">Sound on</button>' +
+    '<button type="button" class="install-btn" id="installBtn" hidden>Get app</button>' +
     "</div>" +
     "</header>";
+
+  const installButton = document.getElementById("installBtn");
+  let installEvent = null;
+  window.addEventListener("beforeinstallprompt", function (event) {
+    event.preventDefault();
+    installEvent = event;
+    if (installButton) installButton.hidden = false;
+  });
+  if (installButton) {
+    installButton.addEventListener("click", function () {
+      if (!installEvent) return;
+      installEvent.prompt();
+      installEvent = null;
+      installButton.hidden = true;
+    });
+  }
 
   const soundButton = document.getElementById("soundBtn");
   if (soundButton) {
@@ -183,6 +318,7 @@ function startReveal() {
       if (entry.isIntersecting) {
         entry.target.classList.add("in");
         observer.unobserve(entry.target);
+        chime();
       }
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
@@ -197,6 +333,7 @@ function startTapFlash() {
   document.addEventListener("pointerdown", function (event) {
     const card = event.target.closest(".product-card, .gate-card, .stock-strip img");
     if (!card) return;
+    tapSound(760);
     const box = card.getBoundingClientRect();
     const ring = document.createElement("span");
     ring.className = "tap-ring";
@@ -417,6 +554,7 @@ function startCheckout() {
     const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
     window.open(url, "_blank");
     showMessage("WhatsApp is opening with your order inside. Tap send and attach your payment proof.", false);
+    success();
   });
 }
 
@@ -539,10 +677,12 @@ function renderProductPage() {
   let qty = 1;
   const qtyValue = document.getElementById("qtyValue");
   document.getElementById("plus").addEventListener("click", function () {
+    clickSound();
     qty += 1;
     qtyValue.textContent = qty;
   });
   document.getElementById("minus").addEventListener("click", function () {
+    clickSound();
     qty = Math.max(1, qty - 1);
     qtyValue.textContent = qty;
   });
@@ -599,8 +739,20 @@ function startSwapForm() {
     if (message) {
       message.textContent = "WhatsApp is opening with your details. Send it with the photos and we will quote you.";
       message.className = "form-message ok";
+      success();
     }
   });
+}
+
+// soft tick when the page opens, so it feels alive straight away
+function startPageSound() {
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    if (!href || href.startsWith("#") || href.startsWith("http")) return;
+    whoosh();
+  }, true);
 }
 
 // ---------- boot ----------
@@ -610,6 +762,7 @@ document.addEventListener("DOMContentLoaded", function () {
   startReveal();
   startTilt();
   startTapFlash();
+  startPageSound();
   wireAddButtons(document);
   renderCartPage();
   renderCategoryPage();
@@ -617,6 +770,10 @@ document.addEventListener("DOMContentLoaded", function () {
   startCheckout();
   startSwapForm();
   updateCartCount();
+  // register the service worker so the app can be installed on a phone
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  }
   startReveal();
   // safety net: never leave a card invisible because the watcher missed it
   setTimeout(function () {

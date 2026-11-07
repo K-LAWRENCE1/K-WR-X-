@@ -1133,3 +1133,40 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .product-card, .stock-strip img { animation: none; }
 }
+
+/* ---------- logo mark in the header ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(120, 190, 255, 0.25), 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- get app button ---------- */
+.install-btn {
+  border: 1px solid rgba(120, 190, 255, 0.55);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.35), rgba(37, 99, 235, 0.15));
+  color: #dbeaff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  animation: installPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes installPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(37, 99, 235, 0); }
+  50%      { box-shadow: 0 0 16px rgba(37, 99, 235, 0.55); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install-btn { animation: none; }
+}
