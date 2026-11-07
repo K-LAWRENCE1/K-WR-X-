@@ -1393,7 +1393,8 @@ const PRODUCTS = [
     image: "thumb-sleeves.jpg",
     badge: "Small but mighty",
     about: "Stops your thumb slipping when your hands get sweaty mid-game. Cheap fix for missed shots."
-  }
+  },
+
   // ---------- PlayStation ----------
   {
     id: "ps5-disc",

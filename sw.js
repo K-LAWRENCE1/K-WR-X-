@@ -1,7 +1,7 @@
 // KAWREX service worker
 // Makes the site installable and keeps it working when the network drops.
 
-const CACHE = "kawrex-v22";
+const CACHE = "kawrex-v23";
 const FILES = [
   "./",
   "./index.html",
