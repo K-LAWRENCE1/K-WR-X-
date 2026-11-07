@@ -171,7 +171,7 @@ function buildHeader(active) {
 
 // ---------- animations ----------
 function startReveal() {
-  const items = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".reveal:not(.in)");
   if (!("IntersectionObserver" in window)) {
     items.forEach(function (item) {
       item.classList.add("in");
@@ -190,6 +190,26 @@ function startReveal() {
   items.forEach(function (item) {
     observer.observe(item);
   });
+}
+
+// flashy ring that blooms wherever you tap a card
+function startTapFlash() {
+  document.addEventListener("pointerdown", function (event) {
+    const card = event.target.closest(".product-card, .gate-card, .stock-strip img");
+    if (!card) return;
+    const box = card.getBoundingClientRect();
+    const ring = document.createElement("span");
+    ring.className = "tap-ring";
+    ring.style.left = (event.clientX - box.left) + "px";
+    ring.style.top = (event.clientY - box.top) + "px";
+    if (getComputedStyle(card).position === "static") {
+      card.style.position = "relative";
+    }
+    card.appendChild(ring);
+    setTimeout(function () {
+      ring.remove();
+    }, 700);
+  }, { passive: true });
 }
 
 // cards lean towards your finger or the mouse
@@ -481,6 +501,7 @@ function renderCategoryPage() {
   });
 
   startTilt();
+  startReveal();
 }
 
 // ---------- product page ----------
@@ -539,6 +560,7 @@ function renderProductPage() {
     relatedHolder.innerHTML = related.map(productCard).join("");
     wireAddButtons(relatedHolder);
     startTilt();
+    startReveal();
   }
 }
 
@@ -587,6 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
   buildHeader(active);
   startReveal();
   startTilt();
+  startTapFlash();
   wireAddButtons(document);
   renderCartPage();
   renderCategoryPage();
@@ -594,4 +617,11 @@ document.addEventListener("DOMContentLoaded", function () {
   startCheckout();
   startSwapForm();
   updateCartCount();
+  startReveal();
+  // safety net: never leave a card invisible because the watcher missed it
+  setTimeout(function () {
+    document.querySelectorAll(".reveal:not(.in)").forEach(function (el) {
+      el.classList.add("in");
+    });
+  }, 900);
 });
