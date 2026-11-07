@@ -387,12 +387,13 @@ function floatPlus(button) {
 // ---------- product card html ----------
 function productCard(product, index) {
   const badge = product.badge ? '<span class="badge">' + product.badge + "</span>" : "";
-  const media = product.image
-    ? '<img src="' + product.image + '" alt="' + product.name + '" loading="lazy" />'
+  const cardPhoto = product.image || (product.gallery && product.gallery[0] ? product.gallery[0].image : "");
+  const media = cardPhoto
+    ? '<img src="' + cardPhoto + '" alt="' + product.name + '" loading="lazy" />'
     : '<span class="card-plate"><span>' + product.name + "</span><em>" + (product.condition || product.specs || "") + "</em></span>";
   return (
     '<article class="product-card reveal" data-tilt style="transition-delay:' + (index % 3) * 70 + 'ms">' +
-    '<a class="card-media' + (product.image ? "" : " card-media-plate") + '" href="product.html?id=' + product.id + '">' +
+    '<a class="card-media' + (cardPhoto ? "" : " card-media-plate") + '" href="product.html?id=' + product.id + '">' +
     media +
     badge +
     "</a>" +
@@ -652,12 +653,25 @@ function renderProductPage() {
 
   document.title = product.name + " | KAWREX";
 
+  const photos = (product.gallery && product.gallery.length)
+    ? product.gallery
+    : (product.image ? [{ label: "", image: product.image }] : []);
+  const heroPhoto = photos.length ? photos[0].image : "";
+  const thumbs = photos.length > 1
+    ? photos.map(function (shot) {
+        return '<button type="button" class="colour-swatch" data-shot="' + shot.image + '" title="' + (shot.label || product.name) + '">' +
+          '<img src="' + shot.image + '" alt="' + (shot.label || product.name) + '" />' +
+          "</button>";
+      }).join("")
+    : "";
+
   holder.innerHTML =
     '<div class="product-hero">' +
-    '<div class="product-photo reveal in' + (product.image ? "" : " product-photo-plate") + '" data-tilt>' +
-    (product.image
-      ? '<img src="' + product.image + '" alt="' + product.name + '" />'
+    '<div class="product-photo reveal in' + (heroPhoto ? "" : " product-photo-plate") + '" data-tilt>' +
+    (heroPhoto
+      ? '<img id="heroImage" src="' + heroPhoto + '" alt="' + product.name + '" />'
       : '<span class="card-plate"><span>' + product.name + "</span><em>" + (product.condition || "") + "</em></span>") +
+    (thumbs ? '<div class="colour-row">' + thumbs + "</div>" : "") +
     "</div>" +
     '<div class="product-info reveal in">' +
     '<p class="mini-tag">' + product.specs + "</p>" +
@@ -686,6 +700,14 @@ function renderProductPage() {
     qty = Math.max(1, qty - 1);
     qtyValue.textContent = qty;
   });
+  holder.querySelectorAll(".colour-swatch").forEach(function (swatch) {
+    swatch.addEventListener("click", function () {
+      const hero = document.getElementById("heroImage");
+      if (hero) hero.src = swatch.getAttribute("data-shot");
+      clickSound();
+    });
+  });
+
   document.getElementById("addNow").addEventListener("click", function (event) {
     addToCart(product.id, qty);
     floatPlus(event.currentTarget);
