@@ -1170,3 +1170,35 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .install-btn { animation: none; }
 }
+
+/* ---------- colour swatches on a product page ---------- */
+.colour-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.colour-swatch {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #08111d;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.colour-swatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.colour-swatch:hover {
+  transform: translateY(-3px);
+  border-color: rgba(120, 190, 255, 0.6);
+}
