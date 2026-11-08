@@ -232,7 +232,7 @@ const PRODUCTS = [
     series: "16",
     condition: "UK used",
     specs: "128GB · Mixed colours · Physical SIM + eSIM",
-    image: "iphone-16-pair.jpg",
+    image: "iphone-16-colours.jpg",
     badge: "UK used",
     about: "Direct UK used. Battery health around 87 to 90 percent. Physical SIM and eSIM both work. Ask for the colour you want."
   },
@@ -330,9 +330,9 @@ const PRODUCTS = [
     series: "17",
     condition: "Brand new",
     specs: "256GB · eSIM only",
-    image: "",
+    image: "iphone-17-air.jpg",
     badge: "Air",
-    about: "The thin one. Brand new, sealed. eSIM only, no SIM tray. Photo is coming, I will send it before you pay."
+    about: "The thin one. Brand new, sealed. Single camera in a slim bar, eSIM only, no SIM tray."
   },
   {
     id: "iphone-17-air-512",
@@ -342,7 +342,7 @@ const PRODUCTS = [
     series: "17",
     condition: "Brand new",
     specs: "512GB · eSIM only",
-    image: "",
+    image: "iphone-17-air.jpg",
     badge: "Air",
     about: "The thin one with double storage. Sealed, eSIM only. Photo coming."
   },

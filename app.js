@@ -255,9 +255,12 @@ function buildHeader(active) {
   const links = [
     { href: "index.html", label: "Home" },
     { href: "iphone.html", label: "iPhone" },
+    { href: "android.html", label: "Android" },
     { href: "gaming.html", label: "Gaming" },
     { href: "playstation.html", label: "PlayStation" },
     { href: "gadgets.html", label: "Gadgets" },
+    { href: "laptops.html", label: "Laptops" },
+    { href: "software.html", label: "Software" },
     { href: "swap.html", label: "Swap" }
   ];
 
