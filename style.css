@@ -33,7 +33,7 @@ body {
   color: var(--ink);
   overflow-x: hidden;
   min-height: 100vh;
-  animation: pageIn 0.5s ease both;
+  animation: pageIn 0.9s ease both;
 }
 
 @keyframes pageIn {
@@ -330,7 +330,7 @@ main {
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
-  animation: float 6s ease-in-out infinite;
+  animation: float 9s ease-in-out infinite;
 }
 
 .hero-card h3 {
@@ -367,7 +367,7 @@ main {
   display: flex;
   gap: 34px;
   width: max-content;
-  animation: slide 26s linear infinite;
+  animation: slide 48s linear infinite;
 }
 
 .marquee:hover .marquee-track {
@@ -936,7 +936,7 @@ main {
   background: radial-gradient(circle, rgba(37, 99, 235, 0.45), transparent 70%);
   filter: blur(18px);
   opacity: 0.6;
-  animation: gateDrift 9s ease-in-out infinite alternate;
+  animation: gateDrift 15s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
@@ -1105,7 +1105,7 @@ main {
 }
 
 .stock-strip img {
-  animation: floatSoft 6s ease-in-out infinite;
+  animation: floatSoft 11s ease-in-out infinite;
 }
 
 .stock-strip img:nth-child(2n)  { animation-delay: 1.2s; }
