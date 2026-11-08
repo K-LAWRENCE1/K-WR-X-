@@ -1404,8 +1404,8 @@ const PRODUCTS = [
     price: 410000,
     category: "gaming",
     specs: "64GB · WiFi + Cellular",
-    image: "",
-    badge: "",
+    image: "ipad-10th-gen-64.jpg",
+    badge: "Best value",
     about: "US unit with cellular, so it works with a SIM. Good everyday tablet for streaming, school and light games."
   },
 
@@ -1867,7 +1867,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "UK used",
     specs: "Core i5 8th gen · 8GB RAM · 256GB SSD · 14 inch",
-    image: "",
+    image: "laptop-elitebook-g5.jpg",
     badge: "200k - 400k",
     about: "Everyday workhorse. Solid body, good keyboard, easy to carry to class or office."
   },
@@ -1879,7 +1879,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "UK used",
     specs: "Core i5 8th gen · 8GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-elitebook-g6.jpg",
     badge: "400k - 700k",
     about: "The newer EliteBook. Slimmer, better battery, same tough build."
   },
@@ -1891,7 +1891,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "UK used",
     specs: "Core i5 11th gen · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-elitebook-g8.jpg",
     badge: "400k - 700k",
     about: "Fast modern EliteBook. Handles plenty of tabs, design work and multitasking."
   },
@@ -1903,7 +1903,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "UK used",
     specs: "Core i5 11th gen · 8GB RAM · 512GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-probook-450.jpg",
     badge: "400k - 700k",
     about: "Bigger screen for the price. Good all round laptop for work and school."
   },
@@ -1915,7 +1915,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "Brand new",
     specs: "Core i5 12th gen · 8GB RAM · 512GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-pavilion-15.jpg",
     badge: "400k - 700k",
     about: "Brand new Pavilion with a bright screen and decent speakers."
   },
@@ -1927,7 +1927,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "UK used",
     specs: "Ryzen 7 · 16GB RAM · 512GB SSD · Touch flip screen",
-    image: "",
+    image: "laptop-envy-x360.jpg",
     badge: "700k - 1m",
     about: "Converts to a tablet, good for drawing and watching. Strong build."
   },
@@ -1939,7 +1939,7 @@ const PRODUCTS = [
     brand: "HP",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 1TB SSD · RTX 4060 · 16.1 inch 165Hz",
-    image: "",
+    image: "laptop-omen-16.jpg",
     badge: "1m and above",
     about: "Proper gaming laptop. Runs heavy games and still stays reasonable when editing."
   },
@@ -1951,7 +1951,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i5 8th gen · 8GB RAM · 256GB SSD · 12.5 inch",
-    image: "",
+    image: "laptop-latitude-5290.jpg",
     badge: "200k - 400k",
     about: "Small and light. Fits in any bag, reliable keyboard."
   },
@@ -1963,7 +1963,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i5 8th gen · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-latitude-7400.jpg",
     badge: "400k - 700k",
     about: "Business class Dell with a nice screen and strong hinge."
   },
@@ -1975,7 +1975,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i5 11th gen · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-latitude-5420.jpg",
     badge: "400k - 700k",
     about: "Modern Latitude, fast and with plenty RAM for heavy browsers."
   },
@@ -1987,7 +1987,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i7 · 16GB RAM · 512GB SSD · Quadro GPU · 15.6 inch",
-    image: "",
+    image: "laptop-precision-5540.jpg",
     badge: "400k - 700k",
     about: "Built for design, AutoCAD and rendering work."
   },
@@ -1999,7 +1999,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i7 11th gen · 16GB RAM · 512GB SSD · 13.4 inch",
-    image: "",
+    image: "laptop-xps-13.jpg",
     badge: "700k - 1m",
     about: "Premium small laptop with very thin bezels. Light and quick."
   },
@@ -2011,7 +2011,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "UK used",
     specs: "Core i7 · 16GB RAM · 1TB SSD · GTX 1650 · 15.6 inch",
-    image: "",
+    image: "laptop-xps-15.jpg",
     badge: "1m and above",
     about: "Big screen, strong build, handles design and video work."
   },
@@ -2023,7 +2023,7 @@ const PRODUCTS = [
     brand: "Dell",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 512GB SSD · RTX 3050 · 15.6 inch 120Hz",
-    image: "",
+    image: "laptop-g15.jpg",
     badge: "1m and above",
     about: "Budget friendly gaming laptop that still plays modern titles well."
   },
@@ -2035,7 +2035,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "UK used",
     specs: "Core i5 8th gen · 8GB RAM · 256GB SSD · 14 inch",
-    image: "",
+    image: "laptop-thinkpad-t480.jpg",
     badge: "200k - 400k",
     about: "The laptop people never sell once they own. Best keyboard around."
   },
@@ -2047,7 +2047,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "UK used",
     specs: "Core i5 11th gen · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-thinkpad-t14.jpg",
     badge: "400k - 700k",
     about: "Newer ThinkPad with better battery and faster internals."
   },
@@ -2059,7 +2059,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "UK used",
     specs: "Core i7 · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-x1-carbon.jpg",
     badge: "700k - 1m",
     about: "Carbon fibre body, very light, still tough. Travel laptop."
   },
@@ -2071,7 +2071,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "UK used",
     specs: "Core i3 10th gen · 8GB RAM · 256GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-ideapad-3.jpg",
     badge: "200k - 400k",
     about: "Simple laptop for browsing, school work and movies."
   },
@@ -2083,7 +2083,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "Brand new",
     specs: "Ryzen 7 · 16GB RAM · 1TB SSD · RTX 3060 · 15.6 inch 165Hz",
-    image: "",
+    image: "laptop-legion-5.jpg",
     badge: "1m and above",
     about: "One of the best value gaming laptops. Cool running and strong."
   },
@@ -2095,7 +2095,7 @@ const PRODUCTS = [
     brand: "Lenovo",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 512GB SSD · RTX 3050 · 15.6 inch 144Hz",
-    image: "",
+    image: "laptop-loq-15.jpg",
     badge: "1m and above",
     about: "Newer budget gaming line from Lenovo. Good cooling."
   },
@@ -2107,7 +2107,7 @@ const PRODUCTS = [
     brand: "Apple",
     condition: "UK used",
     specs: "M1 chip · 8GB RAM · 256GB SSD · 13.3 inch",
-    image: "",
+    image: "laptop-air-m1.jpg",
     badge: "700k - 1m",
     about: "Silent, no fan, battery lasts all day. Best value MacBook right now."
   },
@@ -2119,7 +2119,7 @@ const PRODUCTS = [
     brand: "Apple",
     condition: "UK used",
     specs: "M2 chip · 8GB RAM · 256GB SSD · 13.6 inch",
-    image: "",
+    image: "laptop-air-m2.jpg",
     badge: "1m and above",
     about: "Newer Air with the bigger screen and MagSafe charging."
   },
@@ -2131,7 +2131,7 @@ const PRODUCTS = [
     brand: "Apple",
     condition: "UK used",
     specs: "M1 chip · 8GB RAM · 512GB SSD · 13.3 inch",
-    image: "",
+    image: "laptop-pro-13m1.jpg",
     badge: "1m and above",
     about: "Has a fan, so it holds speed longer than the Air on heavy jobs."
   },
@@ -2143,7 +2143,7 @@ const PRODUCTS = [
     brand: "Apple",
     condition: "UK used",
     specs: "M1 Pro · 16GB RAM · 512GB SSD · 14.2 inch XDR",
-    image: "",
+    image: "laptop-pro-14.jpg",
     badge: "1m and above",
     about: "Pro screen, Pro chip. Video editing and design without struggle."
   },
@@ -2155,7 +2155,7 @@ const PRODUCTS = [
     brand: "Apple",
     condition: "UK used",
     specs: "M1 Max · 32GB RAM · 1TB SSD · 16.2 inch",
-    image: "",
+    image: "laptop-pro-16.jpg",
     badge: "1m and above",
     about: "The heavy duty one. Handles 4K editing and 3D work."
   },
@@ -2167,7 +2167,7 @@ const PRODUCTS = [
     brand: "Asus",
     condition: "UK used",
     specs: "Core i3 11th gen · 8GB RAM · 256GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-vivobook-15.jpg",
     badge: "200k - 400k",
     about: "Light everyday laptop with a nice screen for the money."
   },
@@ -2179,7 +2179,7 @@ const PRODUCTS = [
     brand: "Asus",
     condition: "UK used",
     specs: "Core i7 · 16GB RAM · 512GB SSD · 14 inch",
-    image: "",
+    image: "laptop-zenbook-14.jpg",
     badge: "400k - 700k",
     about: "Thin, metal body, good battery. Looks and feels premium."
   },
@@ -2191,7 +2191,7 @@ const PRODUCTS = [
     brand: "Asus",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 512GB SSD · RTX 3050 · 15.6 inch 144Hz",
-    image: "",
+    image: "laptop-tuf-f15.jpg",
     badge: "1m and above",
     about: "Tough gaming laptop built to take knocks."
   },
@@ -2203,7 +2203,7 @@ const PRODUCTS = [
     brand: "Asus",
     condition: "Brand new",
     specs: "Core i9 · 16GB RAM · 1TB SSD · RTX 4060 · 16 inch 165Hz",
-    image: "",
+    image: "laptop-rog-strix-g16.jpg",
     badge: "1m and above",
     about: "Serious gaming machine with a bright fast screen."
   },
@@ -2215,7 +2215,7 @@ const PRODUCTS = [
     brand: "Acer",
     condition: "UK used",
     specs: "Ryzen 3 · 4GB RAM · 128GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-aspire-3.jpg",
     badge: "200k - 400k",
     about: "Cheapest way into a working laptop. Fine for browsing and typing."
   },
@@ -2227,7 +2227,7 @@ const PRODUCTS = [
     brand: "Acer",
     condition: "UK used",
     specs: "Core i5 10th gen · 8GB RAM · 256GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-aspire-5.jpg",
     badge: "400k - 700k",
     about: "Step up from the Aspire 3, faster and with more space."
   },
@@ -2239,7 +2239,7 @@ const PRODUCTS = [
     brand: "Acer",
     condition: "Brand new",
     specs: "Core i5 · 16GB RAM · 512GB SSD · RTX 3050 · 15.6 inch 144Hz",
-    image: "",
+    image: "laptop-nitro-5.jpg",
     badge: "700k - 1m",
     about: "Popular budget gaming laptop, easy to upgrade."
   },
@@ -2251,7 +2251,7 @@ const PRODUCTS = [
     brand: "Acer",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 1TB SSD · RTX 4060 · 16 inch",
-    image: "",
+    image: "laptop-predator-helios.jpg",
     badge: "1m and above",
     about: "Top Acer gaming line with strong cooling."
   },
@@ -2263,7 +2263,7 @@ const PRODUCTS = [
     brand: "MSI",
     condition: "Brand new",
     specs: "Core i7 · 16GB RAM · 512GB SSD · RTX 3060 · 15.6 inch 144Hz",
-    image: "",
+    image: "laptop-katana-gf66.jpg",
     badge: "1m and above",
     about: "Gaming first laptop with a quick screen."
   },
@@ -2275,7 +2275,7 @@ const PRODUCTS = [
     brand: "MSI",
     condition: "Brand new",
     specs: "Core i5 · 8GB RAM · 512GB SSD · RTX 3050 · 15.6 inch",
-    image: "",
+    image: "laptop-thin-gf63.jpg",
     badge: "1m and above",
     about: "Slim gaming laptop that is easy to carry."
   },
@@ -2287,7 +2287,7 @@ const PRODUCTS = [
     brand: "Microsoft",
     condition: "UK used",
     specs: "Ryzen 5 · 8GB RAM · 256GB SSD · 13.5 inch touch",
-    image: "",
+    image: "laptop-surface-laptop-4.jpg",
     badge: "400k - 700k",
     about: "Touch screen, light body, nice for students."
   },
@@ -2299,7 +2299,7 @@ const PRODUCTS = [
     brand: "Microsoft",
     condition: "UK used",
     specs: "Core i5 · 8GB RAM · 256GB SSD · 13 inch tablet + keyboard",
-    image: "",
+    image: "laptop-surface-pro-8.jpg",
     badge: "700k - 1m",
     about: "Tablet and laptop in one. Good for notes and drawing."
   },
@@ -2311,7 +2311,7 @@ const PRODUCTS = [
     brand: "Toshiba",
     condition: "UK used",
     specs: "Core i3 · 4GB RAM · 500GB HDD · 15.6 inch",
-    image: "",
+    image: "laptop-dynabook.jpg",
     badge: "200k - 400k",
     about: "Cheap and simple. Good first laptop for a student."
   },
@@ -2323,7 +2323,7 @@ const PRODUCTS = [
     brand: "Samsung",
     condition: "UK used",
     specs: "Core i5 · 8GB RAM · 256GB SSD · 15.6 inch",
-    image: "",
+    image: "laptop-galaxy-book-2.jpg",
     badge: "400k - 700k",
     about: "Thin metal laptop that pairs well with a Samsung phone."
   },
@@ -2335,7 +2335,7 @@ const PRODUCTS = [
     brand: "Razer",
     condition: "UK used",
     specs: "Core i7 · 16GB RAM · 1TB SSD · RTX 3070 · 15.6 inch 240Hz",
-    image: "",
+    image: "laptop-razer-blade-15.jpg",
     badge: "1m and above",
     about: "Premium gaming build, metal body, very fast screen."
   },
